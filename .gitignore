@@ -1,0 +1,29 @@
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Downloaded packages (do not ship third-party code)
+pkgs/
+downloads/
+*.whl
+*.tar.gz
+*.tgz
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

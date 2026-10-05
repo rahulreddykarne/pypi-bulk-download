@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pypi-bulk-download"
+version = "0.1.0"
+description = "Bulk-download PyPI packages filtered by popularity (monthly downloads), in parallel, with safe archive unpacking and a JSON manifest. Handy for building research corpora."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "krc7169", email = "krc7169@gmail.com" }]
+keywords = ["pypi", "download", "bulk", "corpus", "top-packages", "supply-chain", "research", "mirror"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Archiving :: Packaging",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = ["requests>=2.20"]
+
+[project.urls]
+Homepage = "https://github.com/rahulreddykarne/pypi-bulk-download"
+Repository = "https://github.com/rahulreddykarne/pypi-bulk-download"
+Issues = "https://github.com/rahulreddykarne/pypi-bulk-download/issues"
+Changelog = "https://github.com/rahulreddykarne/pypi-bulk-download/releases"
+
+[project.scripts]
+pypi-bulk-download = "pypi_bulk_download.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "build", "twine"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pypi_bulk_download"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/pypi_bulk_download", "README.md", "LICENSE", "tests"]
